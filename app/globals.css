@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  height: 100%;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #fb923c;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.body-image {
+  background-image: url("../images/header-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: -5;
+  width: 100%;
+  height: 100vh;
+}
+
+.body-image::before {
+  content: "";
+  position: absolute;
+  background: rgb(210, 210, 210);
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#e8e8e8),
+    to(#e8e8e800)
+  );
+  background: -o-linear-gradient(bottom, #e8e8e8 0%, #e8e8e800 100%);
+  background: linear-gradient(0deg, #e8e8e8 0%, #e8e8e800 100%);
+  height: 50vh;
+  width: 100%;
+  top: 50%;
+  z-index: -11;
+}
+
+.body-image::after {
+  content: "";
+  filter: blur(25px);
+  background-color: #e9e9e9;
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  bottom: -50px;
+  z-index: -10;
+}
+
+.left-image {
+  background-image: url("../images/lines-left.png");
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -3;
+}
+
+main {
+  flex: 1;
+}
+
+h1 {
+  @apply text-[16px] lg:text-[18px];
+}
